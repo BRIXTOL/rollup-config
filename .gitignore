@@ -1,0 +1,5 @@
+# FILES
+.prettierignore
+
+# DIRECTORIES
+node_modules
