@@ -1,5 +1,3 @@
-# FILES
-.prettierignore
-
 # DIRECTORIES
 node_modules
+versions
