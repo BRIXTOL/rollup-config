@@ -11,6 +11,9 @@
   "license": "MIT",
   "types": "./index.d.ts",
   "main": "./index.mjs",
+  "scripts": {
+    "package": "cd versions; pnpm pack ../ && cd .."
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/brixtol/rollup-config"
