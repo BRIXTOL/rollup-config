@@ -1,6 +1,6 @@
 {
   "name": "@brixtol/rollup-config",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Shared Rollup configuration interface used within the Brixtol Textiles monorepo.",
   "homepage": "https://github.com/brixtol/rollup-config",
   "author": {
