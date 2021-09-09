@@ -9,8 +9,9 @@
     "url": "https://brixtoltextiles.com"
   },
   "license": "MIT",
+  "type": "module",
   "types": "./index.d.ts",
-  "main": "./index.js",
+  "exports": "./index.js",
   "scripts": {
     "build": "tsc",
     "update": "pnpm up @brixtol/rollup-config -r",

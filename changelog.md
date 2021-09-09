@@ -1,5 +1,10 @@
 ## _CHANGELOG_
 
+## v1.2.0 - 10/09/21
+
+- Module is ESM added type `module`to package.
+- Update readme and inform upon ESM kind.
+
 ## v1.1.0 - 09/09/21
 
 - Updated readme

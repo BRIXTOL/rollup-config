@@ -16,6 +16,8 @@ pnpm add @brixtol/rollup-config -save-dev
 
 ### Usage
 
+This is an ESM module, your rollup config file must use a `.mjs` extension (`rollup.config.mjs`) or else Node will complain.
+
 <!-- prettier-ignore -->
 ```js
 import { Rollup, env, plugin } from "@brixtol/rollup-config";
