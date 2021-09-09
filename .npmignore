@@ -1,6 +1,10 @@
 # FILES
+index.ts
+tsconfig.json
 .prettierignore
 
 # DIRECTORIES
+.vscode
 types
 node_modules
+versions

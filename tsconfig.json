@@ -1,0 +1,9 @@
+{
+  "extends": "@brixtol/tsconfig",
+  "exclude": ["node_modules"],
+  "include": ["index.ts", "types/*"],
+  "compileOnSave": true,
+  "compilerOptions": {
+    "incremental": false
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "prettier.configPath": "node_modules/@brixtol/prettier-config/index.js",
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/node_modules": true,
+    "**/.netlify": true
+  }
+}
