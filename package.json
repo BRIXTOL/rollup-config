@@ -2,7 +2,7 @@
   "name": "@brixtol/rollup-config",
   "version": "1.1.0",
   "description": "Shared Rollup configuration interface used within the Brixtol Textiles monorepo.",
-  "homepage": "https://brixtoltextiles.com",
+  "homepage": "https://github.com/brixtol/rollup-config",
   "author": {
     "name": "Νίκος Σαβίδης ",
     "email": "n@brixtol.com",
@@ -13,6 +13,7 @@
   "main": "./index.js",
   "scripts": {
     "build": "tsc",
+    "update": "pnpm up @brixtol/rollup-config -r",
     "package": "cd versions; pnpm pack ../ && cd .."
   },
   "repository": {
@@ -54,7 +55,7 @@
   },
   "devDependencies": {
     "@brixtol/eslint-config": "workspace:^1.0.1",
-    "@brixtol/prettier-config": "workspace:^1.0.3",
+    "@brixtol/prettier-config": "workspace:^1.1.0",
     "@brixtol/tsconfig": "workspace:^1.0.1"
   },
   "optionalDependencies": {
