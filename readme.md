@@ -20,9 +20,9 @@ This is an ESM module, your rollup config file must use a `.mjs` extension (`rol
 
 <!-- prettier-ignore -->
 ```js
-import { Rollup, env, plugin } from "@brixtol/rollup-config";
+import { rollup, env, plugin } from "@brixtol/rollup-config";
 
-export default Rollup(
+export default rollup(
   {
     input: "src/file.ts",
     output:   {
