@@ -20,7 +20,7 @@
   "exports": "./index.js",
   "scripts": {
     "build": "tsc",
-    "prepublish": "cd versions; pnpm pack ../ && cd ..",
+    "prepublishOnly": "cd versions; pnpm pack ../ && cd ..",
     "postpublish": "pnpm up @brixtol/rollup-config -r"
   },
   "repository": {
