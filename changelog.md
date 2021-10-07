@@ -1,5 +1,9 @@
 ## _CHANGELOG_
 
+## v1.3.1 - 07/10/21
+
+- Fixed typo in readme
+
 ## v1.3.0 - 07/10/21
 
 - Converted `plugin` export as a serious of `getters`
