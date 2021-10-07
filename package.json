@@ -38,7 +38,7 @@
     "extends": "@brixtol/eslint-config"
   },
   "dependencies": {
-    "@brixtol/rollup-utils": "workspace:^0.4.1",
+    "@brixtol/rollup-utils": "workspace:^1.0.0",
     "@rollup/plugin-alias": "^3.1.5",
     "@rollup/plugin-beep": "^0.2.0",
     "@rollup/plugin-commonjs": "^21.0.0",
