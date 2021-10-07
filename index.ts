@@ -24,7 +24,8 @@ export { config, env, banner, jsonmin } from '@brixtol/rollup-utils';
 /**
  * Rollup Plugins
  *
- * A
+ * A helper export of rollup plugins used within packages
+ * maintained by [Brixtol](htpps://brixtol.com).
  */
 export const plugin = {
   /**
