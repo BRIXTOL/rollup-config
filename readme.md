@@ -1,6 +1,6 @@
 # @brixtol/rollup-config
 
-Shareable rollup configuration used within the [Brixtol Textiles](https://brixtoltextiles.com) monorepo. The module acts as an interface, it exports an instance of Rollup and several plugins that are frequently used by packages contained across the workspace. Each plugin is wrapped as a getter in order which help negate exposing unsed plugins on the export and shave a little extra time off transformations.
+Shareable rollup configuration used within the [Brixtol Textiles](https://brixtoltextiles.com) monorepo. The module acts as an interface, it exports an instance of Rollup and several plugins that are frequently used by packages contained across the workspace. Each plugin is wrapped as a getter which help negate exposing unsed plugins on the export.
 
 ### Why
 
