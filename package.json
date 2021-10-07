@@ -1,7 +1,13 @@
 {
   "name": "@brixtol/rollup-config",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "Shared Rollup configuration interface used within the Brixtol Textiles monorepo.",
+  "keywords": [
+    "rollup",
+    "rollup-plugin",
+    "config",
+    "brixtol"
+  ],
   "homepage": "https://github.com/brixtol/rollup-config",
   "author": {
     "name": "Νίκος Σαβίδης ",
@@ -14,8 +20,7 @@
   "exports": "./index.js",
   "scripts": {
     "build": "tsc",
-    "update": "pnpm up @brixtol/rollup-config -r",
-    "package": "cd versions; pnpm pack ../ && cd .."
+    "postpublish": "cd versions; pnpm pack ../ && cd .. && pnpm up @brixtol/rollup-config -r"
   },
   "repository": {
     "type": "git",
@@ -33,13 +38,14 @@
     "extends": "@brixtol/eslint-config"
   },
   "dependencies": {
-    "@brixtol/rollup-utils": "workspace:^0.4.0",
+    "@brixtol/rollup-utils": "workspace:^0.4.1",
     "@rollup/plugin-alias": "^3.1.5",
     "@rollup/plugin-beep": "^0.2.0",
-    "@rollup/plugin-commonjs": "^20.0.0",
-    "@rollup/plugin-html": "^0.2.3",
+    "@rollup/plugin-commonjs": "^21.0.0",
+    "@rollup/plugin-html": "^0.2.4",
     "@rollup/plugin-json": "^4.1.0",
-    "@rollup/plugin-node-resolve": "^13.0.4",
+    "@rollup/plugin-multi-entry": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^13.0.5",
     "@rollup/plugin-replace": "^3.0.0",
     "@rollup/plugin-typescript": "^8.2.5",
     "rollup-plugin-copy": "^3.4.0",
@@ -51,18 +57,21 @@
     "rollup-plugin-scss": "^3.0.0",
     "rollup-plugin-serve": "^1.1.0",
     "rollup-plugin-terser": "^7.0.2",
-    "rollup-plugin-ts-paths": "^1.0.5",
-    "rollup-plugin-typescript2": "^0.30.0"
+    "rollup-plugin-ts-paths": "^1.0.5"
   },
   "devDependencies": {
     "@brixtol/eslint-config": "workspace:^1.0.1",
-    "@brixtol/prettier-config": "workspace:^1.1.0",
-    "@brixtol/tsconfig": "workspace:^1.0.1"
+    "@brixtol/prettier-config": "workspace:^1.2.0",
+    "@brixtol/tsconfig": "workspace:^1.0.1",
+    "tslib": "^2.3.1"
   },
   "optionalDependencies": {
-    "autoprefixer": "^10.3.4",
-    "postcss": "^8.3.6",
-    "rollup": "^2.56.3",
-    "typescript": "^4.4.2"
+    "autoprefixer": "^10.3.7",
+    "postcss": "^8.3.9",
+    "rollup": "^2.58.0",
+    "typescript": "^4.4.3"
+  },
+  "peerDependencies": {
+    "tslib": "^2.3.1"
   }
 }
