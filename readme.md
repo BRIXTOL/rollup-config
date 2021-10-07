@@ -62,11 +62,12 @@ All plugins are available via the named `plugin` export. In addition to the plug
 | `plugin.html`       | [@rollup/plugin-html](https://git.io/JuTWL)          | Creates HTML files to serve Rollup bundles       |
 | `plugin.json`       | [@rollup/plugin-json](https://git.io/JuTni)          | Convert JSON files to ES Modules                 |
 | `plugin.livereload` | [rollup-plugin-livereload](https://git.io/JuTu8)     | Live Reload after changes                        |
+| `plugin.multi`      | [@rollup/plugin-multi-entry](https://git.io/JwRT2)   | Use multiple entry points for a bundle.          |
 | `plugin.polyfills`  | [rollup-plugin-node-polyfills](https://git.io/JuTuV) | Allows the node builtins to be required/imported |
 | `plugin.resolve`    | [@rollup/plugin-node-resolve](https://git.io/JOqCR)  | Use the Node resolution algorithm                |
 | `plugin.postcss`    | [rollup-plugin-postcss](https://git.io/JuEZg)        | Seamless integration between Rollup and PostCSS  |
 | `plugin.replace`    | [@rollup/plugin-replace](https://git.io/JuTcC)       | Replace occurrences of a set of strings          |
-| `plugin.ts`         | [rollup-plugin-typescript2](https://git.io/JuEpw)    | Integration with Typescript.                     |
+| `plugin.ts`         | [@rollup/plugin-typescript](https://git.io/JuTng)    | Integration with Typescript.                     |
 | `plugin.tspaths`    | [rollup-plugin-ts-paths](https://git.io/JuTEV)       | Resolve import from paths in tsconfig.json       |
 | `plugin.scss`       | [rollup-plugin-scss](https://git.io/JuEZp)           | Process SASS and SCSS files                      |
 | `plugin.serve`      | [rollup-plugin-serve](https://git.io/JuTuq)          | Serve a generated bundle                         |
