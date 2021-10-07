@@ -1,10 +1,10 @@
 # @brixtol/rollup-config
 
-Shareable rollup configuration used within the [Brixtol Textiles](https://brixtoltextiles.com) monorepo. The module acts as an interface, it exports an instance of Rollup and several plugins that are frequently used by packages contained across the workspace.
+Shareable rollup configuration used within the [Brixtol Textiles](https://brixtoltextiles.com) monorepo. The module acts as an interface, it exports an instance of Rollup and several plugins that are frequently used by packages contained across the workspace. Each plugin is wrapped as a getter in order which help negate exposing unsed plugins on the export and shave a little extra time off transformations.
 
 ### Why
 
-We operate atop of a cloud driven serverless architecture.This module assists in the processes relating to our cloud builds, serverless apis, open/closed sourced package and applications using Lambdas or edge handlers. It provides us a single dependency import for bundling with Rollup and single source for version control of all plugins.
+We operate atop of a cloud driven serverless architecture. This module assists in the processes relating to our cloud builds, serverless apis, open/closed sourced package and applications using Lambdas or edge handlers. It provides us a single dependency import for bundling with Rollup and single source for version controlling all plugins.
 
 ### Install
 
@@ -16,10 +16,10 @@ pnpm add @brixtol/rollup-config -save-dev
 
 ### Usage
 
-This is an ESM module, your rollup config file must use a `.mjs` extension (`rollup.config.mjs`) or else Node will complain.
+This is an ESM module, your rollup config file must use a `.mjs` extension (`rollup.config.mjs`) or else Node will complain. The `rollup()` export is totally optional, its a re-export of `defineCofig` and used to provide type completions.
 
 <!-- prettier-ignore -->
-```js
+```ts
 import { rollup, env, plugin } from "@brixtol/rollup-config";
 
 export default rollup(
@@ -28,12 +28,13 @@ export default rollup(
     output:   {
       format: 'cjs',
       dir: 'package',
+      sourcemap: env.is('dev', 'inline'), // Inline sourcemap in development else false
       interop: 'default'
     },
     plugins: env.if('div')(
       [
-        plugin.ts(),
-        plugin.commonjs(),
+        plugin.commonjs(options: {}),
+        plugin.ts(options: {}),
         // etc etc
       ]
     )(
@@ -46,6 +47,26 @@ export default rollup(
 ```
 
 > Types are re-exported and provided for all plugins which support them. Rollup configuration files within our workspace.
+
+### What is the `env.if()` method?
+
+This module provides exports from [@brixtol/rollup-utils](https://github.com/BRIXTOL/rollup-utils). The `env.if()` allows us to use single file for development and production bundles. When an `--environment` flag is passed with a of value of `prod` the plugins are concatenated, so first curried parameter is combined with the second curried parameter, which should both be an array list of plugins[].
+
+The `dev` is deault, so running `rollup -c -w` results in:
+
+<!-- prettier-ignore -->
+```ts
+env.if('dev')([ plugin.commonjs(), plugin.ts() ])([ plugin.terser() ])
+// => [ commonjs(), ts() ]
+```
+
+If you run `rollup -c --environment prod` it results in:
+
+<!-- prettier-ignore -->
+```ts
+env.if('dev')([ plugin.commonjs(), plugin.ts() ])([ plugin.terser() ])
+// => [ commonjs(), ts(), terser() ]
+```
 
 ### Plugins
 
@@ -81,6 +102,10 @@ The module includes several optional dependencies, one being Rollup itself. Ensu
 - [PostCSS](https://github.com/postcss/postcss)
 - [Rollup](https://rollupjs.org/guide/en/)
 - [TypeScript](https://www.typescriptlang.org/)
+
+### Related
+
+- [@brixtol/rollup-utils](https://github.com/BRIXTOL/rollup-utils)
 
 ### License
 
