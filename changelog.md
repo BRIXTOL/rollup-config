@@ -1,5 +1,14 @@
 ## _CHANGELOG_
 
+## v1.3.0 - 07/10/21
+
+- Converted `plugin` export as a serious of `getters`
+- Replaced rollup-plugin-typescript2 with @rollup/plugin-typescript (again)
+- Removed rollup-plugin-typescript2 completely
+- Added @rollup/plugin-multi-entry
+- Added tslib as a peerDependency
+- Version bumps for various plugins
+
 ## v1.2.0 - 10/09/21
 
 - Module is ESM added type `module`to package.
