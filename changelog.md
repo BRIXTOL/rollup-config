@@ -1,5 +1,9 @@
 ## _CHANGELOG_
 
+## v1.3.2 - 13/10/21
+
+- Exposed rollup-utils `date` utility
+
 ## v1.3.1 - 07/10/21
 
 - Fixed typo in readme
