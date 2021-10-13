@@ -16,7 +16,7 @@ import copy from 'rollup-plugin-copy';
 import del from 'rollup-plugin-delete';
 import { terser } from 'rollup-plugin-terser';
 export { defineConfig as rollup } from 'rollup';
-export { config, env, banner, jsonmin } from '@brixtol/rollup-utils';
+export { config, env, banner, jsonmin, date } from '@brixtol/rollup-utils';
 /**
  * Rollup Plugins
  *
