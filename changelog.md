@@ -1,5 +1,9 @@
 ## _CHANGELOG_
 
+## v1.3.3 - 13/10/21
+
+- Updated dependencies
+
 ## v1.3.2 - 13/10/21
 
 - Exposed rollup-utils `date` utility
