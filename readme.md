@@ -89,6 +89,7 @@ All plugins are available via the named `plugin` export. In addition to the plug
 | `plugin.postcss`    | [rollup-plugin-postcss](https://git.io/JuEZg)        | Seamless integration between Rollup and PostCSS  |
 | `plugin.replace`    | [@rollup/plugin-replace](https://git.io/JuTcC)       | Replace occurrences of a set of strings          |
 | `plugin.ts`         | [@rollup/plugin-typescript](https://git.io/JuTng)    | Integration with Typescript.                     |
+| `plugin.ts2`        | [rollup-plugin-typescript2](https://git.io/JuEpw)    | Alternative Rollup with TypeScript integration.  |
 | `plugin.tspaths`    | [rollup-plugin-ts-paths](https://git.io/JuTEV)       | Resolve import from paths in tsconfig.json       |
 | `plugin.scss`       | [rollup-plugin-scss](https://git.io/JuEZp)           | Process SASS and SCSS files                      |
 | `plugin.serve`      | [rollup-plugin-serve](https://git.io/JuTuq)          | Serve a generated bundle                         |

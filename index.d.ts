@@ -141,6 +141,12 @@ export declare const plugin: {
      */
     readonly ts: typeof ts;
     /**
+     * Alternative Typescript Rollup plugin.
+     *
+     * [rollup-plugin-typescript2](https://git.io/JuEpw)
+     */
+    readonly ts2: import("rollup").PluginImpl<import("rollup-plugin-typescript2/dist/partial").Partial<import("rollup-plugin-typescript2/dist/ioptions").IOptions>>;
+    /**
      * Replace alias with resolved import from paths in tsconfig.json
      *
      * rollup-plugin-ts-paths](https://git.io/JuTEV)

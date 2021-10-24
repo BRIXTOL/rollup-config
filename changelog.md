@@ -1,5 +1,12 @@
 ## _CHANGELOG_
 
+## v1.4.0 - 24/10/21
+
+@rollup/plugin-typescript is constantly causing issues and is now only used in certain packages. ShellScape the maintainer of rollup plugins is a detestable little cretin who radiates arrogance so forking the project and helping fix the issues is not something I would be prepared to do (because fuck him, that's why). As a result, we also provide rollup-plugin-typescript2 via plugins. It's no ideal but it suffices for the time being.
+
+- Added rollup-plugin-typescript2 again, using export name `ts2`
+- Updated dependencies
+
 ## v1.3.3 - 13/10/21
 
 - Updated dependencies

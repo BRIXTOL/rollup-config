@@ -9,6 +9,7 @@ import postcss from 'rollup-plugin-postcss';
 import resolve from '@rollup/plugin-node-resolve';
 import replace from '@rollup/plugin-replace';
 import ts from '@rollup/plugin-typescript';
+import ts2 from 'rollup-plugin-typescript2';
 import tspaths from 'rollup-plugin-ts-paths';
 import scss from 'rollup-plugin-scss';
 import serve from 'rollup-plugin-serve';
@@ -144,6 +145,12 @@ export const plugin = {
    * [@rollup/plugin-typescript](https://git.io/JuTng)
    */
   get ts () { return ts; },
+  /**
+   * Alternative Typescript Rollup plugin.
+   *
+   * [rollup-plugin-typescript2](https://git.io/JuEpw)
+   */
+  get ts2 () { return ts2; },
   /**
    * Replace alias with resolved import from paths in tsconfig.json
    *
