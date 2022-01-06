@@ -1,5 +1,17 @@
 ## _CHANGELOG_
 
+## v1.5.0 - 21/11/21
+
+Bundler is now using [ESBuild](https://github.com/egoist/rollup-plugin-esbuild)
+
+- Added rollup-plugin-dts
+- Added rollup-plugin-esbuild
+- Removed rollup-plugin-typescript2
+- Removed @rollup/plugin-typescript (good fucking riddance)
+- Removed rollup-plugin-scss
+- Removed rollup-plugin-ts-paths
+- Removed terser (we no use esbuild for minification)
+
 ## v1.4.0 - 24/10/21
 
 @rollup/plugin-typescript is constantly causing issues and is now only used in certain packages. ShellScape the maintainer of rollup plugins is a detestable little cretin who radiates arrogance so forking the project and helping fix the issues is not something I would be prepared to do (because fuck him, that's why). As a result, we also provide rollup-plugin-typescript2 via plugins. It's no ideal but it suffices for the time being.

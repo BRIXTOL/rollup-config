@@ -8,9 +8,7 @@ import polyfills from 'rollup-plugin-node-polyfills';
 import postcss from 'rollup-plugin-postcss';
 import resolve from '@rollup/plugin-node-resolve';
 import replace from '@rollup/plugin-replace';
-import ts from '@rollup/plugin-typescript';
 import tspaths from 'rollup-plugin-ts-paths';
-import scss from 'rollup-plugin-scss';
 import livereload from 'rollup-plugin-livereload';
 import copy from 'rollup-plugin-copy';
 import del from 'rollup-plugin-delete';
@@ -54,6 +52,19 @@ export declare const plugin: {
      * [rollup-plugin-delete](https://git.io/JuTz3)
      */
     readonly del: typeof del;
+    /**
+     * Rolls`.d.ts? definition files, used together with
+     * esbuild.
+     *
+     * rollup-plugin-dts](https://git.io/J1ykd)
+     */
+    readonly dts: import("rollup").PluginImpl<import("rollup-plugin-dts").Options>;
+    /**
+     * ESBuild integration for minification and TypeScript support.
+     *
+     * [rollup-plugin-esbuild](https://git.io/J1DEP)
+     */
+    readonly esbuild: (options?: import("rollup-plugin-esbuild").Options) => import("rollup").Plugin;
     /**
      * Show filesize in the cli
      *
@@ -109,48 +120,42 @@ export declare const plugin: {
      */
     readonly replace: typeof replace;
     /**
-     * Process SASS and SCSS files
-     *
-     * [rollup-plugin-scss](https://git.io/JuEZp)
-     *
-     * ---
-     *
-     * **DEPRECATED**
-     *
-     * > Use `plugin.postcss` instead. In future versions
-     * this plugin will no longer be available on this export.
-     *
-     * @deprecated
-     */
-    readonly scss: typeof scss;
-    /**
      * Serve the bundle
      *
      * [rollup-plugin-serve](https://git.io/JuTuq)
      */
     readonly serve: any;
     /**
-     * Minify generated es bundle using terser under the hood.
-     * [rollup-plugin-terser](https://git.io/JuTz5)
-     */
-    readonly terser: typeof terser;
-    /**
-     * Seamless integration with Typescript.
-     *
-     * [@rollup/plugin-typescript](https://git.io/JuTng)
-     */
-    readonly ts: typeof ts;
-    /**
-     * Alternative Typescript Rollup plugin.
-     *
-     * [rollup-plugin-typescript2](https://git.io/JuEpw)
-     */
-    readonly ts2: import("rollup").PluginImpl<import("rollup-plugin-typescript2/dist/partial").Partial<import("rollup-plugin-typescript2/dist/ioptions").IOptions>>;
-    /**
      * Replace alias with resolved import from paths in tsconfig.json
      *
      * rollup-plugin-ts-paths](https://git.io/JuTEV)
      */
     readonly tspaths: typeof tspaths;
+    /**
+     * Minify using esbuild
+     *
+     * [rollup-plugin-esbuild](https://git.io/J1DEP)
+     */
+    readonly esminify: (options?: {
+        sourceMap?: boolean;
+        minify?: boolean;
+        minifyWhitespace?: boolean;
+        minifyIdentifiers?: boolean;
+        minifySyntax?: boolean;
+        keepNames?: boolean;
+        legalComments?: "inline" | "none" | "external" | "eof" | "linked";
+    }) => import("rollup").Plugin;
+    /**
+     * Minify generated es bundle using terser under the hood.
+     *
+     * [rollup-plugin-terser](https://git.io/JuTz5)
+     */
+    readonly terser: typeof terser;
+    /**
+     * Alternative Typescript Rollup plugin.
+     *
+     * [rollup-plugin-typescript2](https://git.io/JuEpw)
+     */
+    readonly ts: import("rollup").PluginImpl<import("rollup-plugin-typescript2/dist/partial").Partial<import("rollup-plugin-typescript2/dist/ioptions").IOptions>>;
 };
 //# sourceMappingURL=index.d.ts.map
