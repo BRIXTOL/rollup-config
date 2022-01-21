@@ -1,6 +1,6 @@
 {
   "name": "@brixtol/rollup-config",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "description": "Shared Rollup configuration interface used within the Brixtol Textiles monorepo.",
   "keywords": [
     "rollup",
