@@ -5,7 +5,6 @@
   "compileOnSave": true,
   "compilerOptions": {
     "incremental": false,
-    "target": "ES2016",
-    "declarationMap": true
+    "target": "ES2016"
   }
 }

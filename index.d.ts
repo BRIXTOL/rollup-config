@@ -1,5 +1,4 @@
 import alias from '@rollup/plugin-alias';
-import beep from '@rollup/plugin-beep';
 import commonjs from '@rollup/plugin-commonjs';
 import html from '@brixtol/rollup-html';
 import json from '@rollup/plugin-json';
@@ -8,7 +7,8 @@ import polyfills from 'rollup-plugin-node-polyfills';
 import postcss from 'rollup-plugin-postcss';
 import resolve from '@rollup/plugin-node-resolve';
 import replace from '@rollup/plugin-replace';
-import livereload from 'rollup-plugin-livereload';
+import type { Options } from 'browser-sync';
+import type { Plugin } from 'rollup';
 import copy from 'rollup-plugin-copy';
 import del from 'rollup-plugin-delete';
 import { terser } from 'rollup-plugin-terser';
@@ -23,6 +23,12 @@ export { config, env, banner, jsonmin, date } from '@brixtol/rollup-utils';
  */
 export declare const plugin: {
     /**
+     * Serve bundle via Browser Sync
+     *
+     * [rollup-plugin-browsersync](https://git.io/JXjkK)
+     */
+    readonly bs: (options: Options) => Plugin;
+    /**
      * Alias modules in a build.
      *
      * [@rollup/plugin-alias](https://git.io/JuTc9)
@@ -33,7 +39,7 @@ export declare const plugin: {
      *
      * [@rollup/plugin-beep](https://git.io/JuTEW)
      */
-    readonly beep: typeof beep;
+    readonly beep: () => Plugin;
     /**
      * Copy files and folders, with glob support.
      *
@@ -70,7 +76,7 @@ export declare const plugin: {
      *
      * [rollup-plugin-filesize](https://git.io/JuTzw)
      */
-    readonly filesize: (options?: import("rollup-plugin-filesize").FileSizePluginOptions) => import("rollup").Plugin;
+    readonly filesize: (options?: import("rollup-plugin-filesize").FileSizePluginOptions) => Plugin;
     /**
      * Creates HTML files to serve Rollup bundles
      *
@@ -83,12 +89,6 @@ export declare const plugin: {
      * [@rollup/plugin-json](https://git.io/JuTni)
      */
     readonly json: typeof json;
-    /**
-     * Live Reload after changes
-     *
-     * [rollup-plugin-livereload](https://git.io/JuTu8)
-     */
-    readonly livereload: typeof livereload;
     /**
      * Allows use of multiple entry points for a bundle.
      *
@@ -115,22 +115,11 @@ export declare const plugin: {
      */
     readonly resolve: typeof resolve;
     /**
-     * @deprecated
-     *
-     * Use the `define:{}` option of ESBuild.
-     *
-     * ---
      * Replace occurrences of a set of strings.
      *
      * [@rollup/plugin-replace](https://git.io/JuTcC)
      */
     readonly replace: typeof replace;
-    /**
-     * Serve the bundle
-     *
-     * [rollup-plugin-serve](https://git.io/JuTuq)
-     */
-    readonly serve: any;
     /**
      * Minify using esbuild
      *
@@ -144,4 +133,3 @@ export declare const plugin: {
      */
     readonly terser: typeof terser;
 };
-//# sourceMappingURL=index.d.ts.map

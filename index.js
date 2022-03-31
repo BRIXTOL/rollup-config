@@ -9,9 +9,8 @@ import postcss from 'rollup-plugin-postcss';
 import resolve from '@rollup/plugin-node-resolve';
 import replace from '@rollup/plugin-replace';
 import dts from 'rollup-plugin-dts';
-import serve from 'rollup-plugin-serve';
 import esbuild, { minify } from 'rollup-plugin-esbuild';
-import livereload from 'rollup-plugin-livereload';
+import bs from 'rollup-plugin-browsersync';
 import copy from 'rollup-plugin-copy';
 import del from 'rollup-plugin-delete';
 import filesize from 'rollup-plugin-filesize';
@@ -25,6 +24,12 @@ export { config, env, banner, jsonmin, date } from '@brixtol/rollup-utils';
  * maintained by [Brixtol](htpps://brixtol.com).
  */
 export const plugin = {
+    /**
+     * Serve bundle via Browser Sync
+     *
+     * [rollup-plugin-browsersync](https://git.io/JXjkK)
+     */
+    get bs() { return bs; },
     /**
      * Alias modules in a build.
      *
@@ -87,12 +92,6 @@ export const plugin = {
      */
     get json() { return json; },
     /**
-     * Live Reload after changes
-     *
-     * [rollup-plugin-livereload](https://git.io/JuTu8)
-     */
-    get livereload() { return livereload; },
-    /**
      * Allows use of multiple entry points for a bundle.
      *
      * [@rollup/plugin-multi-entry](https://git.io/JwRT2)
@@ -118,22 +117,11 @@ export const plugin = {
      */
     get resolve() { return resolve; },
     /**
-     * @deprecated
-     *
-     * Use the `define:{}` option of ESBuild.
-     *
-     * ---
      * Replace occurrences of a set of strings.
      *
      * [@rollup/plugin-replace](https://git.io/JuTcC)
      */
     get replace() { return replace; },
-    /**
-     * Serve the bundle
-     *
-     * [rollup-plugin-serve](https://git.io/JuTuq)
-     */
-    get serve() { return serve; },
     /**
      * Minify using esbuild
      *

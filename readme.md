@@ -87,6 +87,7 @@ All plugins are available via the named `plugin` export. In addition to the plug
 | ------------------- | ------------------------------------------------------------------ |
 | `plugin.alias`      | [@rollup/plugin-alias](https://git.io/JuTc9)                       |
 | `plugin.beep`       | [@rollup/plugin-beep](https://git.io/JuTEW)                        |
+| `plugin.bs`         | [rollup-plugin-browsersync](https://git.io/JXjkK)                  |
 | `plugin.copy`       | [rollup-plugin-copy](https://git.io/JuTux)                         |
 | `plugin.commonjs`   | [@rollup/plugin-commonjs](https://git.io/JuTcI)                    |
 | `plugin.del`        | [rollup-plugin-delete](https://git.io/JuTz3)                       |
