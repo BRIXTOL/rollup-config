@@ -1,24 +1,21 @@
 import alias from '@rollup/plugin-alias';
 import beep from '@rollup/plugin-beep';
 import commonjs from '@rollup/plugin-commonjs';
-import html from '@rollup/plugin-html';
+import html from '@brixtol/rollup-html';
 import json from '@rollup/plugin-json';
 import multi from '@rollup/plugin-multi-entry';
 import polyfills from 'rollup-plugin-node-polyfills';
 import postcss from 'rollup-plugin-postcss';
 import resolve from '@rollup/plugin-node-resolve';
 import replace from '@rollup/plugin-replace';
-import ts from 'rollup-plugin-typescript2';
 import dts from 'rollup-plugin-dts';
 import serve from 'rollup-plugin-serve';
-import tspaths from 'rollup-plugin-ts-paths';
 import esbuild, { minify } from 'rollup-plugin-esbuild';
 import livereload from 'rollup-plugin-livereload';
 import copy from 'rollup-plugin-copy';
 import del from 'rollup-plugin-delete';
 import filesize from 'rollup-plugin-filesize';
 import { terser } from 'rollup-plugin-terser';
-;
 export { defineConfig as rollup } from 'rollup';
 export { config, env, banner, jsonmin, date } from '@brixtol/rollup-utils';
 /**
@@ -80,7 +77,7 @@ export const plugin = {
     /**
      * Creates HTML files to serve Rollup bundles
      *
-     * [@rollup/plugin-html](https://git.io/JuTWL)
+     * [rollup-plugin-html](https://github.com/brixtol/rollup-html#readme)
      */
     get html() { return html; },
     /**
@@ -117,9 +114,15 @@ export const plugin = {
      * Use the Node resolution algorithm.
      *
      * [@rollup/plugin-node-resolve](https://git.io/JOqCR)
+     *
      */
     get resolve() { return resolve; },
     /**
+     * @deprecated
+     *
+     * Use the `define:{}` option of ESBuild.
+     *
+     * ---
      * Replace occurrences of a set of strings.
      *
      * [@rollup/plugin-replace](https://git.io/JuTcC)
@@ -132,12 +135,6 @@ export const plugin = {
      */
     get serve() { return serve; },
     /**
-     * Replace alias with resolved import from paths in tsconfig.json
-     *
-     * rollup-plugin-ts-paths](https://git.io/JuTEV)
-     */
-    get tspaths() { return tspaths; },
-    /**
      * Minify using esbuild
      *
      * [rollup-plugin-esbuild](https://git.io/J1DEP)
@@ -148,11 +145,5 @@ export const plugin = {
      *
      * [rollup-plugin-terser](https://git.io/JuTz5)
      */
-    get terser() { return terser; },
-    /**
-     * Alternative Typescript Rollup plugin.
-     *
-     * [rollup-plugin-typescript2](https://git.io/JuEpw)
-     */
-    get ts() { return ts; }
+    get terser() { return terser; }
 };
