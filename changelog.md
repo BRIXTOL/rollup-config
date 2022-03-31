@@ -1,5 +1,12 @@
 ## _CHANGELOG_
 
+## v1.5.3 - 31/03/2
+
+Type Fixes
+
+- Included the `types` directory in npm packaging as types extend it.
+- Forget to extend the ESBuild options interface, fixed that.
+
 ## v1.5.2 - 31/03/2
 
 Updated Types and cleaned up some now removed plugins

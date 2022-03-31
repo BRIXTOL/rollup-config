@@ -21,7 +21,7 @@ type MinifyOptions = Omit<OmitOptions, (
   | 'jsxFragment'
 )>
 
-interface ESBuildOptions {
+interface ESBuildOptions extends OmitOptions {
   sourceMap?: boolean;
   optimizeDeps?: {
     include: string[]
