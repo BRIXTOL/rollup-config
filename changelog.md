@@ -1,5 +1,13 @@
 ## _CHANGELOG_
 
+## v1.5.2 - 31/03/2
+
+Updated Types and cleaned up some now removed plugins
+
+- Improved readme
+- Replaced @rollup/plugin-html for @brixtol/rollup-html
+- Provided temporary declaration exports for rollup-plugin-esbuild (see: https://github.com/egoist/rollup-plugin-esbuild/issues/332)
+
 ## v1.5.0 - 21/11/21
 
 Bundler is now using [ESBuild](https://github.com/egoist/rollup-plugin-esbuild)
